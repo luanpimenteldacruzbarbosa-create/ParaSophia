@@ -26,6 +26,32 @@
       max-width: 600px;
       text-align: center;
     }
+    .timer-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(121, 172, 120, 0.3);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .timer-title {
+      font-size: 0.9rem;
+      color: #79ac78;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .timer-display {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .audio-container {
+      margin: 20px 0;
+    }
+    audio {
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+    }
     .message-box {
       margin: 20px 0;
       line-height: 1.6;
@@ -34,6 +60,7 @@
       padding: 20px;
       border-radius: 12px;
       border: 1px dashed rgba(121, 172, 120, 0.4);
+      text-align: justify;
     }
     .timeline-title {
       font-size: 1.4rem;
@@ -69,10 +96,27 @@
 <body>
 
   <div class="container">
-    <div class="message-box">
-      Eu amo cada detalhe que faz você ser a mulher da minha vida. Mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia!
+    
+    <!-- Contador de Tempo -->
+    <div class="timer-box">
+      <div class="timer-title">Juntos Há</div>
+      <div class="timer-display" id="timer">Carregando tempo...</div>
     </div>
 
+    <!-- Tocador de Música -->
+    <div class="audio-container">
+      <audio controls autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta o tocador de áudio.
+      </audio>
+    </div>
+
+    <!-- Texto Romântico -->
+    <div class="message-box">
+      Sophia, eu só queria te lembrar o quanto você é uma pessoa incrível para mim. Você é muito linda, mas não é só pela sua aparência. Você é uma pessoa muito legal, gente boa, divertida e com um coração enorme. Eu admiro muito o jeito que você é e todos esses pequenos detalhes que fazem você ser tão especial. Eu amo estar com você, conversar com você, rir com você e simplesmente ter você na minha vida. Amo seus cabelos ruivos, amo seus olhos, amo seu toque, seu abraço e a sensação de estar perto de você. Amo cada detalhe que faz você ser a mulher que escolhi pra minha vida. E mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia, e sou muito feliz por ter alguém tão especial como você na minha vida.
+    </div>
+
+    <!-- Fotos -->
     <div class="timeline">
       <div class="timeline-title">Nossos Momentos Inesquecíveis</div>
 
@@ -80,7 +124,7 @@
       <div class="moment-card">
         <img src="Foto1.jpg" alt="Nosso Começo">
         <div class="moment-date">24 DE JULHO DE 2025</div>
-        <div class="moment-desc">O dia em que a nossa história começou de forma inesquecível.</div>
+        <div class="moment-desc">saudades de quao linda você é.</div>
       </div>
 
       <!-- Foto 2 -->
@@ -94,28 +138,28 @@
       <div class="moment-card">
         <img src="Foto3.jpg" alt="Sempre Juntos">
         <div class="moment-date">SEMPRE JUNTOS</div>
-        <div class="moment-desc">Mais uma lembrança perfeita pra conta da nossa vida juntos.</div>
+        <div class="moment-desc">primeiro presente que me deu</div>
       </div>
 
       <!-- Foto 4 -->
       <div class="moment-card">
         <img src="Foto4.jpg" alt="Momento 4">
         <div class="moment-date">MOMENTO ESPECIAL</div>
-        <div class="moment-desc">Cada segundo ao seu lado vale a pena.</div>
+        <div class="moment-desc">carinha de apaixonado que eu amo.</div>
       </div>
 
       <!-- Foto 5 -->
       <div class="moment-card">
         <img src="Foto5.jpg" alt="Momento 5">
         <div class="moment-date">NOSSO AMOR</div>
-        <div class="moment-desc">Construindo as melhores memórias com você.</div>
+        <div class="moment-desc">esse seu sorriso que me encanta.</div>
       </div>
 
       <!-- Foto 6 -->
       <div class="moment-card">
         <img src="Foto6.jpg" alt="Momento 6">
         <div class="moment-date">LEMBRANÇA LINDA</div>
-        <div class="moment-desc">O seu sorriso transforma qualquer dia simples no melhor dia.</div>
+        <div class="moment-desc">simplesmente você</div>
       </div>
 
       <!-- Foto 7 -->
@@ -129,14 +173,14 @@
       <div class="moment-card">
         <img src="Foto8.jpg" alt="Momento 8">
         <div class="moment-date">MOMENTO ÚNICO</div>
-        <div class="moment-desc">Mais um momento incrível guardado no coração.</div>
+        <div class="moment-desc">pacto da minha vida</div>
       </div>
 
       <!-- Foto 9 -->
       <div class="moment-card">
         <img src="Foto9.jpg" alt="Momento 9">
         <div class="moment-date">PARA SEMPRE</div>
-        <div class="moment-desc">Amo a nossa conexão e tudo que vivemos.</div>
+        <div class="moment-desc">te amo</div>
       </div>
 
       <!-- Foto 10 -->
@@ -157,7 +201,7 @@
       <div class="moment-card">
         <img src="Foto12.jpg" alt="Momento 12">
         <div class="moment-date">MEU GRANDE AMOR</div>
-        <div class="moment-desc">Eu amo você hoje e sempre!</div>
+        <div class="moment-desc">2 bestas abaixonados.</div>
       </div>
 
       <!-- Foto 13 -->
@@ -169,6 +213,32 @@
 
     </div>
   </div>
+
+  <script>
+    // Data de início (24 de Julho de 2025)
+    const dataInicio = new Date(2025, 6, 24, 0, 0, 0);
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diferenca = agora - dataInicio;
+
+      if (diferenca < 0) {
+        document.getElementById("timer").innerHTML = "Aguardando a data...";
+        return;
+      }
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferenca / 1000 / 60) % 60);
+      const segundos = Math.floor((diferenca / 1000) % 60);
+
+      document.getElementById("timer").innerHTML = 
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
 
 </body>
 </html>
