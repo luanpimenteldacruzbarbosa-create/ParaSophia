@@ -10,10 +10,9 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       background-color: #0d1612;
-      background: radial-gradient(circle at center, #183226 0%, #080d0a 100%);
+      background: radial-gradient(circle at center, #13241c 0%, #0d1612 100%);
       color: #e2f0d9;
       font-family: 'Georgia', serif;
       min-height: 100vh;
@@ -22,321 +21,154 @@
       align-items: center;
       padding: 20px 0;
     }
-
-    /* Tela de início para permitir a execução da música */
-    #overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #080d0a;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      cursor: pointer;
+    .container {
+      width: 90%;
+      max-width: 600px;
       text-align: center;
-      padding: 20px;
     }
-
-    #overlay h2 {
-      font-size: 1.4rem;
-      margin-top: 15px;
-      color: #72b992;
-    }
-
-    #overlay p {
-      font-size: 0.85rem;
-      color: #8fae9c;
-      margin-top: 8px;
-    }
-
-    .heart-icon {
-      font-size: 3rem;
-      color: #52a374;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.18); }
-      100% { transform: scale(1); }
-    }
-
-    /* Container estilo celular */
-    .mobile-card {
-      width: 100%;
-      max-width: 390px;
-      background: rgba(15, 28, 21, 0.88);
-      border: 1px solid rgba(80, 140, 100, 0.25);
-      border-radius: 35px;
-      padding: 30px 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-      text-align: center;
-      backdrop-filter: blur(12px);
-    }
-
-    h1 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-top: 15px;
-      color: #ffffff;
-    }
-
-    .subtitle {
-      font-size: 0.8rem;
-      color: #8fae9c;
-      margin-top: 8px;
-      margin-bottom: 25px;
-    }
-
-    /* Blocos do Contador */
-    .timer-container {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .time-box {
-      border: 1px solid rgba(114, 185, 146, 0.35);
-      border-radius: 18px;
-      padding: 10px 5px;
-      width: 70px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .time-box .number {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .time-box .label {
-      font-size: 0.6rem;
-      color: #72b992;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .clock-digital {
-      border: 1px solid rgba(114, 185, 146, 0.2);
-      border-radius: 20px;
-      padding: 6px 16px;
-      display: inline-block;
-      font-size: 0.85rem;
-      color: #72b992;
-      margin-bottom: 15px;
-      letter-spacing: 2px;
-    }
-
-    .total-days {
-      font-size: 0.8rem;
-      color: #a3c4b1;
-      margin-bottom: 25px;
-    }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 25px 0;
-    }
-
-    .divider-line {
-      height: 1px;
-      width: 60px;
-      background: linear-gradient(to right, transparent, #52a374, transparent);
-    }
-
-    /* Caixa do Texto Romântico */
     .message-box {
-      border: 1px dashed rgba(114, 185, 146, 0.4);
-      border-radius: 15px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.25);
-      font-style: italic;
-      font-size: 0.88rem;
+      margin: 20px 0;
       line-height: 1.6;
-      color: #d8eadf;
-      text-align: left;
-      margin-bottom: 35px;
-      white-space: pre-line;
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px dashed rgba(121, 172, 120, 0.4);
     }
-
-    /* Seção de Momentos / Fotos */
-    .timeline {
-      text-align: left;
-      margin-top: 20px;
-    }
-
     .timeline-title {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #72b992;
-      margin-bottom: 20px;
+      font-size: 1.4rem;
+      margin: 30px 0 20px;
+      color: #79ac78;
     }
-
     .moment-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
       padding: 15px;
       margin-bottom: 20px;
-      border: 1px solid rgba(114, 185, 146, 0.18);
+      text-align: left;
     }
-
     .moment-card img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 12px;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 10px;
     }
-
     .moment-date {
-      font-size: 0.75rem;
-      color: #72b992;
+      font-size: 0.8rem;
+      color: #79ac78;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
     }
-
     .moment-desc {
-      font-size: 0.85rem;
-      color: #d1e3d7;
-      line-height: 1.4;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tela de abertura para iniciar a música -->
-  <div id="overlay" onclick="iniciarSite()">
-    <div class="heart-icon">♥</div>
-    <h2>Clique aqui, Sophia</h2>
-    <p>Tenho uma surpresa especial para você...</p>
-  </div>
-
-  <!-- Arquivo de Áudio da Música -->
-  <audio id="meuAudio" src="musica.mp3" preload="auto"></audio>
-
-  <div class="mobile-card">
-    <div class="heart-icon">♥</div>
-    <h1>Para a mulher da minha vida</h1>
-    <p class="subtitle">📅 Juntos desde 24 de julho de 2025</p>
-
-    <!-- Contador Principal -->
-    <div class="timer-container">
-      <div class="time-box">
-        <div class="number" id="anos">0</div>
-        <div class="label">Ano</div>
-      </div>
-      <div class="time-box">
-        <div class="number" id="meses">0</div>
-        <div class="label">Mês</div>
-      </div>
-      <div class="time-box">
-        <div class="number" id="dias">0</div>
-        <div class="label">Dias</div>
-      </div>
-    </div>
-
-    <!-- Relógio em tempo real -->
-    <div class="clock-digital" id="relogio">00 : 00 : 00</div>
-
-    <div class="total-days">
-      ✨ São <strong id="diasTotais" style="color:#fff;">0</strong> dias de amor ✨
-    </div>
-
-    <div class="divider">
-      <div class="divider-line"></div>
-      <span style="color:#52a374; font-size: 0.8rem;">♥</span>
-      <div class="divider-line"></div>
-    </div>
-
-    <!-- Texto Romântico -->
+  <div class="container">
     <div class="message-box">
-Sophia, eu só queria te lembrar o quanto você é uma pessoa incrível para mim. Você é muito linda, mas não é só pela sua aparência. Você é uma pessoa muito legal, gente boa, divertida e com um coração enorme. Eu admiro muito o jeito que você é e todos esses pequenos detalhes que fazem você ser tão especial.
-
-Eu amo estar com você, conversar com você, rir com você e simplesmente ter você na minha vida. Amo seus cabelos ruivos, amo seus olhos, amo seu toque, seu abraço e a sensação de estar perto de você. Amo cada detalhe que faz você ser a mulher da minha vida.
-
-E mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia, e sou muito feliz por ter alguém tão especial como você na minha vida.
+      Eu amo cada detalhe que faz você ser a mulher da minha vida. Mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia!
     </div>
 
-    <!-- Seção de Momentos especiais com fotos -->
     <div class="timeline">
       <div class="timeline-title">Nossos Momentos Inesquecíveis</div>
 
-      <!-- Momento 1 -->
+      <!-- Foto 1 -->
       <div class="moment-card">
-        <img src="foto1.jpg" alt="Nosso Começo">
+        <img src="Foto1.jpg" alt="Nosso Começo">
         <div class="moment-date">24 DE JULHO DE 2025</div>
         <div class="moment-desc">O dia em que a nossa história começou de forma inesquecível.</div>
       </div>
 
-      <!-- Momento 2 -->
+      <!-- Foto 2 -->
       <div class="moment-card">
         <img src="Foto2.jpg" alt="Momento Especial">
         <div class="moment-date">MOMENTO ESPECIAL</div>
         <div class="moment-desc">Um dos dias mais divertidos e marcantes ao seu lado.</div>
       </div>
 
-      <!-- Momento 3 -->
+      <!-- Foto 3 -->
       <div class="moment-card">
         <img src="Foto3.jpg" alt="Sempre Juntos">
         <div class="moment-date">SEMPRE JUNTOS</div>
         <div class="moment-desc">Mais uma lembrança perfeita pra conta da nossa vida juntos.</div>
       </div>
+
+      <!-- Foto 4 -->
+      <div class="moment-card">
+        <img src="Foto4.jpg" alt="Momento 4">
+        <div class="moment-date">MOMENTO ESPECIAL</div>
+        <div class="moment-desc">Cada segundo ao seu lado vale a pena.</div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="moment-card">
+        <img src="Foto5.jpg" alt="Momento 5">
+        <div class="moment-date">NOSSO AMOR</div>
+        <div class="moment-desc">Construindo as melhores memórias com você.</div>
+      </div>
+
+      <!-- Foto 6 -->
+      <div class="moment-card">
+        <img src="Foto6.jpg" alt="Momento 6">
+        <div class="moment-date">LEMBRANÇA LINDA</div>
+        <div class="moment-desc">O seu sorriso transforma qualquer dia simples no melhor dia.</div>
+      </div>
+
+      <!-- Foto 7 -->
+      <div class="moment-card">
+        <img src="Foto7.jpg" alt="Encontro com a minha família">
+        <div class="moment-date">MOMENTO ESPECIAL</div>
+        <div class="moment-desc">Encontro com a minha família</div>
+      </div>
+
+      <!-- Foto 8 -->
+      <div class="moment-card">
+        <img src="Foto8.jpg" alt="Momento 8">
+        <div class="moment-date">MOMENTO ÚNICO</div>
+        <div class="moment-desc">Mais um momento incrível guardado no coração.</div>
+      </div>
+
+      <!-- Foto 9 -->
+      <div class="moment-card">
+        <img src="Foto9.jpg" alt="Momento 9">
+        <div class="moment-date">PARA SEMPRE</div>
+        <div class="moment-desc">Amo a nossa conexão e tudo que vivemos.</div>
+      </div>
+
+      <!-- Foto 10 -->
+      <div class="moment-card">
+        <img src="Foto10.jpg" alt="Momento 10">
+        <div class="moment-date">MOMENTO ESPECIAL</div>
+        <div class="moment-desc">Você me faz o homem mais feliz do mundo.</div>
+      </div>
+
+      <!-- Foto 11 -->
+      <div class="moment-card">
+        <img src="Foto11.jpg" alt="Momento 11">
+        <div class="moment-date">NOSSO CAMINHO</div>
+        <div class="moment-desc">Juntos em cada passo e em cada momento.</div>
+      </div>
+
+      <!-- Foto 12 -->
+      <div class="moment-card">
+        <img src="Foto12.jpg" alt="Momento 12">
+        <div class="moment-date">MEU GRANDE AMOR</div>
+        <div class="moment-desc">Eu amo você hoje e sempre!</div>
+      </div>
+
+      <!-- Foto 13 -->
+      <div class="moment-card">
+        <img src="Foto13.jpg" alt="Primeiro esculacho">
+        <div class="moment-date">MOMENTO MARCANTE</div>
+        <div class="moment-desc">primeiro esculacho</div>
+      </div>
+
     </div>
   </div>
 
-  <script>
-    // Data de início do relacionamento
-    const dataInicio = new Date(2025, 6, 24, 0, 0, 0); // 24 de Julho de 2025
-    
-    // Música inicia aos 1:40 (100 segundos)
-    const tempoInicioMusica = 100;
-
-    function iniciarSite() {
-      document.getElementById('overlay').style.display = 'none';
-      const audio = document.getElementById('meuAudio');
-      audio.currentTime = tempoInicioMusica;
-      audio.play();
-    }
-
-    function atualizarContador() {
-      const agora = new Date();
-      const diferenca = agora - dataInicio;
-
-      const totalDias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-
-      let anos = agora.getFullYear() - dataInicio.getFullYear();
-      let meses = agora.getMonth() - dataInicio.getMonth();
-      let dias = agora.getDate() - dataInicio.getDate();
-
-      if (dias < 0) {
-        meses--;
-        const ultimoDiaMesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
-        dias += ultimoDiaMesAnterior;
-      }
-
-      if (meses < 0) {
-        anos--;
-        meses += 12;
-      }
-
-      const horas = String(agora.getHours()).padStart(2, '0');
-      const minutos = String(agora.getMinutes()).padStart(2, '0');
-      const segundos = String(agora.getSeconds()).padStart(2, '0');
-
-      document.getElementById('anos').innerText = anos;
-      document.getElementById('meses').innerText = meses;
-      document.getElementById('dias').innerText = dias;
-      document.getElementById('relogio').innerText = `${horas} : ${minutos} : ${segundos}`;
-      document.getElementById('diasTotais').innerText = totalDias;
-    }
-
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-  </script>
 </body>
 </html>
