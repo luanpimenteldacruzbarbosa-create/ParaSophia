@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para meu amor, Sophia ❤️</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -11,85 +12,220 @@
       padding: 0;
     }
     body {
-      background-color: #0d1612;
-      background: radial-gradient(circle at center, #13241c 0%, #0d1612 100%);
+      background-color: #050b07;
+      background: radial-gradient(circle at top, #0f2417 0%, #050b07 100%);
       color: #e2f0d9;
-      font-family: 'Georgia', serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: 20px 0;
     }
     .container {
       width: 90%;
-      max-width: 600px;
+      max-width: 420px;
       text-align: center;
     }
-    .timer-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(121, 172, 120, 0.3);
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 20px;
+
+    /* Ícone do Coração Topo */
+    .top-heart {
+      font-size: 2.2rem;
+      color: #1db954;
+      margin: 15px 0;
+      animation: pulse 2s infinite;
     }
-    .timer-title {
-      font-size: 0.9rem;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Data de Inicio */
+    .start-date {
+      font-size: 0.85rem;
       color: #79ac78;
-      margin-bottom: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Contadores Circulares */
+    .counters-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    .counter-circle {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 30%;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .counter-number {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .counter-label {
+      font-size: 0.65rem;
+      color: #79ac78;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .timer-display {
+
+    /* Relógio Digital HH:MM:SS */
+    .digital-clock {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .days-total {
+      font-size: 0.85rem;
+      color: #79ac78;
+      margin-bottom: 25px;
+    }
+
+    /* Card de Música */
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .card-title {
       font-size: 1.1rem;
       font-weight: bold;
+      margin-bottom: 4px;
     }
-    .audio-container {
-      margin: 20px 0;
-    }
-    audio {
-      width: 100%;
-      height: 40px;
-      border-radius: 20px;
-    }
-    .message-box {
-      margin: 20px 0;
-      line-height: 1.6;
-      font-style: italic;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px dashed rgba(121, 172, 120, 0.4);
-      text-align: justify;
-    }
-    .timeline-title {
-      font-size: 1.4rem;
-      margin: 30px 0 20px;
-      color: #79ac78;
-    }
-    .moment-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .moment-card img {
-      width: 100%;
-      border-radius: 8px;
-      display: block;
-      margin-bottom: 10px;
-    }
-    .moment-date {
+    .card-subtitle {
       font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 15px;
+    }
+    .music-btn {
+      background: #1db954;
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* Caixa do Texto Principal */
+    .message-text {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      text-align: justify;
+      color: #d1e0cb;
+    }
+
+    /* Carrossel de Fotos */
+    .carousel-container {
+      position: relative;
+      margin-top: 10px;
+    }
+    .carousel-slide {
+      display: none;
+    }
+    .carousel-slide.active {
+      display: block;
+    }
+    .carousel-slide img {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .carousel-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .carousel-counter {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .photo-caption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Linha do Tempo (Nossa História) */
+    .timeline {
+      text-align: left;
+      margin-top: 25px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: #1db954;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .timeline-item::before {
+      content: '❤️';
+      position: absolute;
+      left: -25px;
+      top: -2px;
+      font-size: 0.7rem;
+    }
+    .timeline-date {
+      font-size: 0.75rem;
       color: #79ac78;
       font-weight: bold;
-      margin-bottom: 5px;
       text-transform: uppercase;
     }
-    .moment-desc {
-      font-size: 0.95rem;
+    .timeline-title-item {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 2px 0 5px;
+    }
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: #aaa;
     }
   </style>
 </head>
@@ -97,147 +233,239 @@
 
   <div class="container">
     
-    <!-- Contador de Tempo -->
-    <div class="timer-box">
-      <div class="timer-title">Juntos Há</div>
-      <div class="timer-display" id="timer">Carregando tempo...</div>
+    <!-- Coração do Topo -->
+    <div class="top-heart">💚</div>
+
+    <!-- Data -->
+    <div class="start-date">
+      <i class="far fa-calendar-alt"></i> Juntos desde 24 de julho de 2025
     </div>
 
-    <!-- Tocador de Música -->
-    <div class="audio-container">
-      <audio controls autoplay loop>
+    <!-- Contadores Circulares -->
+    <div class="counters-grid">
+      <div class="counter-circle">
+        <span class="counter-number" id="years">0</span>
+        <span class="counter-label">Anos</span>
+      </div>
+      <div class="counter-circle">
+        <span class="counter-number" id="months">0</span>
+        <span class="counter-label">Meses</span>
+      </div>
+      <div class="counter-circle">
+        <span class="counter-number" id="days">0</span>
+        <span class="counter-label">Dias</span>
+      </div>
+    </div>
+
+    <!-- Relógio Digital -->
+    <div class="digital-clock" id="clock">00 : 00 : 00</div>
+
+    <!-- Total de Dias -->
+    <div class="days-total">
+      <i class="fas fa-heart"></i> São <span id="total-days">0</span> dias de amor <i class="fas fa-heart"></i>
+    </div>
+
+    <!-- Player de Música -->
+    <div class="card">
+      <div style="font-size: 1.2rem; color: #1db954; margin-bottom: 5px;"><i class="fas fa-music"></i></div>
+      <div class="card-title">Nossa Música</div>
+      <div class="card-subtitle">A trilha sonora do nosso amor</div>
+      <button class="music-btn" onclick="toggleAudio()">
+        <i class="fas fa-play" id="play-icon"></i> Clique para ouvir
+      </button>
+      <audio id="myAudio" loop>
         <source src="musica.mp3" type="audio/mpeg">
-        Seu navegador não suporta o tocador de áudio.
       </audio>
     </div>
 
-    <!-- Texto Romântico -->
-    <div class="message-box">
-      Sophia, eu só queria te lembrar o quanto você é uma pessoa incrível para mim. Você é muito linda, mas não é só pela sua aparência. Você é uma pessoa muito legal, gente boa, divertida e com um coração enorme. Eu admiro muito o jeito que você é e todos esses pequenos detalhes que fazem você ser tão especial. Eu amo estar com você, conversar com você, rir com você e simplesmente ter você na minha vida. Amo seus cabelos ruivos, amo seus olhos, amo seu toque, seu abraço e a sensação de estar perto de você. Amo cada detalhe que faz você ser a mulher que escolhi pra minha vida. E mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia, e sou muito feliz por ter alguém tão especial como você na minha vida.
+    <!-- Mensagem Principal -->
+    <div class="card">
+      <div class="message-text">
+        Sophia, eu só queria te lembrar o quanto você é uma pessoa incrível para mim. Você é muito linda, mas não é só pela sua aparência. Você é uma pessoa muito legal, gente boa, divertida e com um coração enorme. Eu admiro muito o jeito que você é e todos esses pequenos detalhes que fazem você ser tão especial. Eu amo estar com você, conversar com você, rir com você e simplesmente ter você na minha vida. Amo seus cabelos ruivos, amo seus olhos, amo seu toque, seu abraço e a sensação de estar perto de você. Amo cada detalhe que faz você ser a mulher que escolhi pra minha vida. E mesmo quando estamos longe, você continua presente nos meus pensamentos e no meu coração. Você é uma pessoa maravilhosa, e eu espero que nunca se esqueça disso. Eu te amo muito, Sophia, e sou muito feliz por ter alguém tão especial como você na minha vida.
+      </div>
     </div>
 
-    <!-- Fotos -->
-    <div class="timeline">
-      <div class="timeline-title">Nossos Momentos Inesquecíveis</div>
+    <!-- Nossos Momentos (Carrossel de Fotos) -->
+    <div class="card">
+      <div class="card-title">Nossos Momentos</div>
+      <div class="card-subtitle">Memórias que guardamos no coração</div>
 
-      <!-- Foto 1 -->
-      <div class="moment-card">
-        <img src="Foto1.jpg" alt="Nosso Começo">
-        <div class="moment-date">24 DE JULHO DE 2025</div>
-        <div class="moment-desc">saudades de quao linda você é.</div>
+      <div class="carousel-container">
+        <!-- Foto 1 -->
+        <div class="carousel-slide active">
+          <img src="Foto1.jpg" alt="Foto 1">
+          <div class="photo-caption">O nosso começo inesquecível</div>
+        </div>
+        <!-- Foto 2 -->
+        <div class="carousel-slide">
+          <img src="Foto2.jpg" alt="Foto 2">
+          <div class="photo-caption">Um dos dias mais divertidos</div>
+        </div>
+        <!-- Foto 3 -->
+        <div class="carousel-slide">
+          <img src="Foto3.jpg" alt="Foto 3">
+          <div class="photo-caption">Mais uma lembrança perfeita</div>
+        </div>
+        <!-- Foto 4 -->
+        <div class="carousel-slide">
+          <img src="Foto4.jpg" alt="Foto 4">
+          <div class="photo-caption">Cada segundo vale a pena</div>
+        </div>
+        <!-- Foto 5 -->
+        <div class="carousel-slide">
+          <img src="Foto5.jpg" alt="Foto 5">
+          <div class="photo-caption">Construindo memórias</div>
+        </div>
+        <!-- Foto 6 -->
+        <div class="carousel-slide">
+          <img src="Foto6.jpg" alt="Foto 6">
+          <div class="photo-caption">Seu sorriso ilumina tudo</div>
+        </div>
+        <!-- Foto 7 -->
+        <div class="carousel-slide">
+          <img src="Foto7.jpg" alt="Foto 7">
+          <div class="photo-caption">Encontro com a minha família</div>
+        </div>
+        <!-- Foto 8 -->
+        <div class="carousel-slide">
+          <img src="Foto8.jpg" alt="Foto 8">
+          <div class="photo-caption">Momento único no coração</div>
+        </div>
+        <!-- Foto 9 -->
+        <div class="carousel-slide">
+          <img src="Foto9.jpg" alt="Foto 9">
+          <div class="photo-caption">Nossa conexão especial</div>
+        </div>
+        <!-- Foto 10 -->
+        <div class="carousel-slide">
+          <img src="Foto10.jpg" alt="Foto 10">
+          <div class="photo-caption">Você me faz o homem mais feliz</div>
+        </div>
+        <!-- Foto 11 -->
+        <div class="carousel-slide">
+          <img src="Foto11.jpg" alt="Foto 11">
+          <div class="photo-caption">Juntos em cada passo</div>
+        </div>
+        <!-- Foto 12 -->
+        <div class="carousel-slide">
+          <img src="Foto12.jpg" alt="Foto 12">
+          <div class="photo-caption">2 bestas apaixonados</div>
+        </div>
+        <!-- Foto 13 -->
+        <div class="carousel-slide">
+          <img src="Foto13.jpg" alt="Foto 13">
+          <div class="photo-caption">primeiro esculacho</div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+          <span class="carousel-counter" id="slide-counter">1 / 13</span>
+          <button class="carousel-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
       </div>
-
-      <!-- Foto 2 -->
-      <div class="moment-card">
-        <img src="Foto2.jpg" alt="Momento Especial">
-        <div class="moment-date">MOMENTO ESPECIAL</div>
-        <div class="moment-desc">primeiro presente que me deu</div>
-      </div>
-
-      <!-- Foto 3 -->
-      <div class="moment-card">
-        <img src="Foto3.jpg" alt="Sempre Juntos">
-        <div class="moment-date">SEMPRE JUNTOS</div>
-        <div class="moment-desc">te amo</div>
-      </div>
-
-      <!-- Foto 4 -->
-      <div class="moment-card">
-        <img src="Foto4.jpg" alt="Momento 4">
-        <div class="moment-date">MOMENTO ESPECIAL</div>
-        <div class="moment-desc">carinha de apaixonado que eu amo.</div>
-      </div>
-
-      <!-- Foto 5 -->
-      <div class="moment-card">
-        <img src="Foto5.jpg" alt="Momento 5">
-        <div class="moment-date">NOSSO AMOR</div>
-        <div class="moment-desc">esse seu sorriso que me encanta.</div>
-      </div>
-
-      <!-- Foto 6 -->
-      <div class="moment-card">
-        <img src="Foto6.jpg" alt="Momento 6">
-        <div class="moment-date">LEMBRANÇA LINDA</div>
-        <div class="moment-desc">simplesmente você</div>
-      </div>
-
-      <!-- Foto 7 -->
-      <div class="moment-card">
-        <img src="Foto7.jpg" alt="Encontro com a minha família">
-        <div class="moment-date">MOMENTO ESPECIAL</div>
-        <div class="moment-desc">Encontro com a minha família</div>
-      </div>
-
-      <!-- Foto 8 -->
-      <div class="moment-card">
-        <img src="Foto8.jpg" alt="Momento 8">
-        <div class="moment-date">MOMENTO ÚNICO</div>
-        <div class="moment-desc">pacto da minha vida</div>
-      </div>
-
-      <!-- Foto 9 -->
-      <div class="moment-card">
-        <img src="Foto9.jpg" alt="Momento 9">
-        <div class="moment-date">PARA SEMPRE</div>
-        <div class="moment-desc">te amo</div>
-      </div>
-
-      <!-- Foto 10 -->
-      <div class="moment-card">
-        <img src="Foto10.jpg" alt="Momento 10">
-        <div class="moment-date">MOMENTO ESPECIAL</div>
-        <div class="moment-desc">Você me faz o homem mais feliz do mundo.</div>
-      </div>
-
-      <!-- Foto 11 -->
-      <div class="moment-card">
-        <img src="Foto11.jpg" alt="Momento 11">
-        <div class="moment-date">NOSSO CAMINHO</div>
-        <div class="moment-desc">Juntos em cada passo e em cada momento.</div>
-      </div>
-
-      <!-- Foto 12 -->
-      <div class="moment-card">
-        <img src="Foto12.jpg" alt="Momento 12">
-        <div class="moment-date">MEU GRANDE AMOR</div>
-        <div class="moment-desc">2 bestas abaixonados.</div>
-      </div>
-
-          <!-- Foto 13 -->
-      <div class="moment-card">
-        <img src="Foto13.jpg" alt="Primeiro esculacho">
-        <div class="moment-date">MOMENTO MARCANTE</div>
-        <div class="moment-desc">primeiro esculacho</div>
-      </div>
-
     </div>
+
+    <!-- Nossa História -->
+    <div class="card">
+      <div class="card-title" style="text-align: center;">Nossa História</div>
+      <div class="card-subtitle" style="text-align: center;">Momentos que marcaram nossa jornada</div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">24 DE JULHO DE 2025</div>
+          <div class="timeline-title-item">O Começo de Tudo</div>
+          <div class="timeline-desc">O dia em que nossa caminhada juntos começou.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">MOMENTO MARCANTE</div>
+          <div class="timeline-title-item">Encontro com a Família</div>
+          <div class="timeline-desc">Apresentando a mulher da minha vida.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">PARA SEMPRE</div>
+          <div class="timeline-title-item">2 Bestas Apaixonados</div>
+          <div class="timeline-desc">Sorrisos, abraços e a certeza do nosso amor.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script>
-    // Data de início (24 de Julho de 2025)
-    const dataInicio = new Date(2025, 6, 24, 0, 0, 0);
+    // Configuração da Data de Início (24 de Julho de 2025)
+    const startDate = new Date(2025, 6, 24, 0, 0, 0);
 
-    function atualizarContador() {
-      const agora = new Date();
-      const diferenca = agora - dataInicio;
+    function updateTimer() {
+      const now = new Date();
+      
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      let days = now.getDate() - startDate.getDate();
 
-      if (diferenca < 0) {
-        document.getElementById("timer").innerHTML = "Aguardando a data...";
-        return;
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
       }
 
-      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diferenca / 1000 / 60) % 60);
-      const segundos = Math.floor((diferenca / 1000) % 60);
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
 
-      document.getElementById("timer").innerHTML = 
-        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      // Atualiza os círculos
+      document.getElementById('years').innerText = years < 0 ? 0 : years;
+      document.getElementById('months').innerText = months < 0 ? 0 : months;
+      document.getElementById('days').innerText = days < 0 ? 0 : days;
+
+      // Relógio digital
+      const diff = now - startDate;
+      if (diff > 0) {
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
+        const minutes = Math.floor((diff / (1000 * 60)) % 60).toString().padStart(2, '0');
+        const seconds = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
+        document.getElementById('clock').innerText = `${hours} : ${minutes} : ${seconds}`;
+
+        const totalDaysCount = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById('total-days').innerText = totalDaysCount;
+      }
     }
 
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Controle do Áudio
+    const audio = document.getElementById('myAudio');
+    const playIcon = document.getElementById('play-icon');
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        playIcon.className = 'fas fa-pause';
+      } else {
+        audio.pause();
+        playIcon.className = 'fas fa-play';
+      }
+    }
+
+    // Controle do Carrossel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const counter = document.getElementById('slide-counter');
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      if (index >= slides.length) currentSlide = 0;
+      if (index < 0) currentSlide = slides.length - 1;
+      
+      slides[currentSlide].classList.add('active');
+      counter.innerText = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function moveSlide(step) {
+      currentSlide += step;
+      showSlide(currentSlide);
+    }
   </script>
 
 </body>
